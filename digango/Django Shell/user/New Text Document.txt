@@ -1,0 +1,34 @@
+from app.models imort*
+
+to add users
+User.objects.create(first_name="jala",last_name="hamo",email_address="jala@hotmail",age="35")
+User.objects.create(first_name="sami",last_name="khalil",email_address="jala@hotmail",age="18")
+User.objects.create(first_name="anas",last_name="issa",email_address="anas@hotmail",age="32")
+
+to get all users:
+User.objects.all()
+
+to get last user:
+User.objects.get(id=3)
+
+to get first user:
+User.object.get(id=1)
+
+to change last name of user 3:
+x = User.objects.get(id=3)
+x.last_name="pancake"
+x.save()
+
+to delete user 3:
+c = User.objects.get(id=2)
+c.delete()
+
+to sort users by first name:
+User.objects.all().order_by("first_name")
+
+to sort users by first name descending:
+user.objects.get().order_by("-first_name")
+
+
+
+
