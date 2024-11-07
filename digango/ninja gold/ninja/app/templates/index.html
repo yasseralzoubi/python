@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="">
+            <label for="">Your Gold:</label>
+            <input type="text">
+        </div>
+        <div class="main_box">
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <h2>farm</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <h2>Cave</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <h2>House</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <h2>Quest</h2>
+                    <p>(earns 0-50 gold)</p>
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+        <div>
+            <h2>Activites:</h2>
+            <div class="activ">  
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
