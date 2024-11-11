@@ -8,7 +8,7 @@ def root(request):
     context={
         "user":models.get_user()
     }
-    return render(request,"index.html",context)
+    return render(request,"index.html",context)  # response 
 
 
 def add_user(request):

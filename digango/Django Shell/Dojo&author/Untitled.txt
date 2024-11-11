@@ -1,0 +1,24 @@
+
+book.objects.create(name="C sharp")
+book.objects.create(name="java")
+book.objects.create(name="Python")
+book.objects.create(name="PhP")
+book.objects.create(name="Ruby")
+
+Author.objects.create(name='jane Austen')
+Author.objects.create(name='Emily Dickinson')
+Author.objects.create(name='Fyodor dostoevsky')
+Author.objects.create(name='fydor Dostoevsky')
+Author.objects.create(name='wiliam Shakespeare')
+Author.objects.create(name='Lau Tzu')
+
+class Author(models.Model):
+notes = models.TextField(max_length=255)
+
+python mange.py makemigrations
+python manage.py migrate
+
+
+
+
+

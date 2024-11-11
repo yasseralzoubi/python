@@ -11,7 +11,7 @@
     <div class="container">
         <div class="">
             <label for="">Your Gold:</label>
-            <input type="text">
+            <input type="text" value="{{request.session.gold}}">
         </div>
         <div class="main_box">
             <div class="box">
@@ -19,6 +19,9 @@
                     {% csrf_token %}
                     <h2>farm</h2>
                     <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="farm">
                     <input type="submit" value="Find Gold!">
                 </form>
             </div>
@@ -27,6 +30,9 @@
                     {% csrf_token %}
                     <h2>Cave</h2>
                     <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="Cave">
                     <input type="submit" value="Find Gold!">
                 </form>
             </div>
@@ -35,6 +41,9 @@
                     {% csrf_token %}
                     <h2>House</h2>
                     <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="House">
                     <input type="submit" value="Find Gold!">
                 </form>
             </div>
@@ -42,16 +51,21 @@
                 <form action="/process_money" method="POST">
                     {% csrf_token %}
                     <h2>Quest</h2>
-                    <p>(earns 0-50 gold)</p>
+                    <p>(earns/takes 0-50 gold)</p>
+                    <input type="hidden" name="min-gold" value="-50">
+                    <input type="hidden" name="max-gold" value="50">
+                    <input type="hidden" name="place" value="Quest">
                     <input type="submit" value="Find Gold!">
                 </form>
             </div>
         </div>
         <div>
             <h2>Activites:</h2>
-            <div class="activ">  
+            <div class="activ">
+                {%for i in request.session.activites%}
+                <p>{{i}}</p>
+                {%endfor%}
             </div>
-
         </div>
     </div>
     

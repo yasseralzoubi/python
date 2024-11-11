@@ -1,0 +1,75 @@
+# Query 1: Create 5 Books
+from books_authors_app.models import Book
+
+Book.objects.create(name='C Sharp')
+Book.objects.create(name='Java')
+Book.objects.create(name='Python')
+Book.objects.create(name='PHP')
+Book.objects.create(name='Ruby')
+
+# Query 2: Create 5 Authors
+from books_authors_app.models import Author
+
+Author.objects.create(name='Jane Austen')
+Author.objects.create(name='Emily Dickinson')
+Author.objects.create(name='Fyodor Dostoevsky')
+Author.objects.create(name='William Shakespeare')
+Author.objects.create(name='Lau Tzu')
+
+# Query 3: Add 'notes' Field to Authors
+
+# Query 4: Change 'C Sharp' to 'C#'
+csharp_book = Book.objects.get(name='C Sharp')
+csharp_book.name = 'C#'
+csharp_book.save()
+
+# Query 5: Change Author's First Name
+william = Author.objects.get(name='William Shakespeare')
+william.name = 'Bill Shakespeare'
+william.save()
+
+# Query 6: Assign Author to Books
+jane = Author.objects.get(name='Jane Austen')
+emily = Author.objects.get(name='Emily Dickinson')
+fyodor = Author.objects.get(name='Fyodor Dostoevsky')
+william = Author.objects.get(name='Bill Shakespeare')
+lau_tzu = Author.objects.get(name='Lau Tzu')
+
+csharp_book = Book.objects.get(name='C#')
+java_book = Book.objects.get(name='Java')
+python_book = Book.objects.get(name='Python')
+php_book = Book.objects.get(name='PHP')
+ruby_book = Book.objects.get(name='Ruby')
+
+csharp_book.authors.add(jane)
+csharp_book.authors.add(emily)
+java_book.authors.add(emily)
+java_book.authors.add(fyodor)
+python_book.authors.add(fyodor)
+python_book.authors.add(william)
+php_book.authors.add(william)
+php_book.authors.add(lau_tzu)
+ruby_book.authors.add(lau_tzu)
+
+# Query 7: Retrieve Authors for 3rd Book
+python_book = Book.objects.get(name='Python')
+python_book_authors = python_book.authors.all()
+print(python_book_authors)
+
+# Query 8: Remove Author from 3rd Book
+python_book = Book.objects.get(name='Python')
+python_book.authors.remove(fyodor)
+
+# Query 9: Add Author to 2nd Book
+java_book = Book.objects.get(name='Java')
+java_book.authors.add(lau_tzu)
+
+# Query 10: Find Books by 3rd Author
+fyodor = Author.objects.get(name='Fyodor Dostoevsky')
+fyodor_books = fyodor.books.all()
+print(fyodor_books)
+
+# Query 11: Find Authors of 5th Book
+ruby_book = Book.objects.get(name='Ruby')
+ruby_book_authors = ruby_book.authors.all()
+print(ruby_book_authors)

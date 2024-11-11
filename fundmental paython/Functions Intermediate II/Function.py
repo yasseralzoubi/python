@@ -1,7 +1,9 @@
 # x = [ [5,2,3], [10,8,9] ] 
 
-# x[0][0]=15
+# x[1][0]=15
 # print(x)
+
+
 
 # students = [
 #      {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -50,20 +52,20 @@
 #     for value,list in some_dict.items():
 #         print(len(list)""+(value))
 
-def printInfo(some_dict):
-    for i in range(0,len(some_dict["locations"]),1):
-        print((some_dict["locations"][i]))
-def printInfo2(some_dict):
-    for i in range(0,len(some_dict["instructors"]),1):
-        print((some_dict["instructors"][i]))
+# def printInfo(some_dict):
+#     for i in range(0,len(some_dict["locations"]),1):
+#         print((some_dict["locations"][i]))
+# def printInfo2(some_dict):
+#     for i in range(0,len(some_dict["instructors"]),1):
+#         print((some_dict["instructors"][i]))
 
-dojo = {
-   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
-   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
-}
+# dojo = {
+#    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+#    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+# }
 
-printInfo(dojo)
-printInfo2(dojo)
+# printInfo(dojo)
+# printInfo2(dojo)
  
  
 

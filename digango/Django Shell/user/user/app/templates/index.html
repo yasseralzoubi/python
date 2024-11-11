@@ -21,6 +21,7 @@
             <td>{{i.first_name}}</td>
             <td>{{i.email_address}}</td>
             <td>{{i.age}}</td>
+            <td>{{i.created_at}}</td>
             <td><a href="/delete_user/{{i.id}}">delete</a></td>
             
         </tr>
@@ -29,7 +30,7 @@
 
     <h2>Add a User:</h2>
     <form action="/add" method="POST">
-        {% csrf_token %}   
+     {% csrf_token %}   
     <label for="">First name</label>
     <input type="text" name="firstname">
 

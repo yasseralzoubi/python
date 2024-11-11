@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="">Your Gold:</label>
+            <input type="text" value="{{ session['gold'] }}">
+        </div>
+        <div class="main_box">
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    <h2>Farm</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="Farm">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    <h2>Cave</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="Cave">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    <h2>House</h2>
+                    <p>(earns 10-20 gold)</p>
+                    <input type="hidden" name="min-gold" value="10">
+                    <input type="hidden" name="max-gold" value="20">
+                    <input type="hidden" name="place" value="House">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="box">
+                <form action="/process_money" method="POST">
+                    <h2>Quest</h2>
+                    <p>(earns/takes 0-50 gold)</p>
+                    <input type="hidden" name="min-gold" value="-50">
+                    <input type="hidden" name="max-gold" value="50">
+                    <input type="hidden" name="place" value="Quest">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+        <div>
+            <h2>Activities:</h2>
+            <div class="activ">
+                {% for activity in session['activities'] %}
+                    <p>{{ activity }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
