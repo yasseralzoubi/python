@@ -1,0 +1,55 @@
+Create  3 djos
+Dojo.objects.create(name="future",city="Ramallah",state="WB"
+Dojo.objects.create(name="future",city="Ramallah",state="jn"
+Dojo.objects.create(name="future",city="Ramallah",state="NB"
+
+
+to delete all
+Dojo.object.all().delete()
+
+
+create 3 djos:
+
+Dojo.objects.create(name="future",city="Ramallah",state="WB"
+Dojo.objects.create(name="future",city="Ramallah",state="jn"
+Dojo.objects.create(name="future",city="Ramallah",state="NB"
+
+
+create 3 Ninja belong to the first dojo:
+this_dojo=Dojo.obeject.get(id=4)
+Ninjas.object.create(first_name="Yasser",last_name="alzoubi",dojo=this_dojo)
+Ninjas.object.create(first_name="sami",last_name="alzoubi",dojo=this_dojo)
+Ninjas.object.create(first_name="ali",last_name="alzoubi",dojo=this_dojo)
+
+
+create 3 Ninja belong to the sec dojo:
+this_dojo=Dojo.obeject.get(id=5)
+Ninjas.object.create(first_name="mohmad",last_name="mokh",dojo=this_dojo)
+Ninjas.object.create(first_name="jalal",last_name="hamo",dojo=this_dojo)
+Ninjas.object.create(first_name="ali",last_name=alzoubi,dojo=this_dojo)
+
+create 3 Ninja belong to the thr dojo:
+this_dojo=Dojo.obeject.get(id=6)
+Ninjas.object.create(first_name="mohmad",last_name="mokh",dojo=this_dojo)
+Ninjas.object.create(first_name="jalal",last_name="hamo",dojo=this_dojo)
+Ninjas.object.create(first_name="ali",last_name=alzoubi,dojo=this_dojo)
+
+
+to retritive all ninja from first:
+Ninjas.objects.filter(dojo=Djos.get(id=4))
+Ninjas.objects.filter(dojo=Djos.first())
+
+to retritive all ninja from first:
+Ninjas.objects.filter(dojo=Djos.get(id=7))
+Ninjas.objects.filter(dojo=Djos.last())
+
+add new attribute to class Dojo
+then i should give it defult 
+after that i do makemagrations and migrate
+then it is apper in data base
+
+Dojo.objects.create(name="future",city="Ramallah",state="WB",descrebition="hello world"
+it will add in data base
+
+
+
