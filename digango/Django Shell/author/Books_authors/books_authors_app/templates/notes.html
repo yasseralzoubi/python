@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Details</title>
 </head>
 <body>
     <h1>{{ author.first_name}} {{author.last_name}}</h1>
     <p>ID:{{author.id}}</p>
     <p>Notes:{{author.notes}}</p>
 
-    <p>Books:</p>
-    
+    <h3>books:</h3>
+
+
+    {% for book in author_books %}
+    <p>{{book.title}}</p>
+    {%endfor%}
+
+
+    <form action="/display_book/{{author.id}}" method="post">
+    {% csrf_token %}
+    <select name="book_id" id="">
+        {%for book in books%}
+        <option value="{{book.id}}">{{book.title}}</option>
+        {%endfor%}
+    </select>
+    <!-- <input type="hidden" value="id" name="{{book.id}}"> -->
+    <input type="submit" value="Add">
+    </form>
 </body>
 </html>

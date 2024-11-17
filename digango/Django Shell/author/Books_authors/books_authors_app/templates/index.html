@@ -30,7 +30,7 @@
         <tr>
             <td>{{book.id}}</td>
             <td>{{book.title}}</td>
-            <td><a href="{% url 'bookdesc' book.id %}">view</a></td>
+            <td><a href="/bookdesc/{{book.id}}">view</a></td>
         </tr>
         {%endfor%}
     </table>

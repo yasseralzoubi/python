@@ -1,5 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect 
 from . import models
+from django.utils import timezone
 
 
 def root(request):
@@ -19,6 +20,13 @@ def add_new(request):
 
 def creatshow(request):
     if request.method=="POST":
+
+                # التحقق من البيانات المدخلة باستخدام basic_validator
+        errors = models.Show.objects.basic_validator(request.POST)
+        if errors:
+            return render(request, "add_show.html", {"errors": errors})
+
+
         models.create_show(request.POST)
         return redirect ('/shows')
     else:
@@ -52,6 +60,12 @@ def edit(request,id):
 
 def confirm_uptade(request):
     if request.method=="POST":
+         # التحقق من البيانات المدخلة باستخدام basic_validator
+        errors = models.Show.objects.basic_validator(request.POST)
+        if errors:
+            return render(request, "add_show.html", {"errors": errors})
+
+
         models.update_show(request.POST)
         return redirect('/')
     else:

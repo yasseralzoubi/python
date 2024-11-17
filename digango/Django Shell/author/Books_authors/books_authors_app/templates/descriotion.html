@@ -12,8 +12,21 @@
 
 <p>Authors:</p>
 
+{%for i  in book.authors.all%}
+<p>{{i.first_name}}</p>
+{%endfor%}
 
+<form action="/display_author/{{book.id}}" method="POST">
+{% csrf_token %}
+<select name="authors_id" id="">
+    {% for author in authors%}
+    <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+    {%endfor%}
+</select>
 
+<input type="submit" value="Add">
+
+</form>
     
 </body>
 </html>

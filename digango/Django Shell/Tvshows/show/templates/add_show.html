@@ -24,12 +24,14 @@
     <textarea name="des" id=""></textarea>
 
     <input type="submit" value="Creat">
-
-
-
-
-
-
 </form>
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items %}
+            <li><strong>{{ field }}:</strong> {{ error }}</li>
+         {% endfor %}
+    </ul>
+    {% endif %}
+
 </body>
 </html>

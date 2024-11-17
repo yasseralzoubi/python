@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registraion</title>
+</head>
+<body>
+    <h1>Registration</h1>
+    <form action="/regestraion" method="POST">
+    {% csrf_token %} 
+    <label for="">First Name</label>
+    <input type="text" name="first_name"><br>
+
+    <label for="">Last Name</label>
+    <input type="text" name="last_name"><br>
+
+    <label for="">Email</label>
+    <input type="text" name="email"><br>
+
+    <label for="">Password</label>
+
+    <input type="password" name="password"><br>
+
+    <label for="">Comfirm PW</label>
+    <input type="password" name="confirm_pw"><br>
+
+    <input type="submit" value="Register">
+    </form>
+
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items %}
+            <li><strong>{{ field }}:</strong> {{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+
+    <h1>Login</h1>
+
+    <form action="/login" method="POST">
+    {% csrf_token %}
+    <label for="">Email</label>
+    <input type="text" name="email"><br>
+
+    <label for="">Password</label>
+    <input type="password" name="password"><br>
+
+    <input type="hidden" name="Register_id" value="123">
+
+    <input type="submit" name="Login">
+    </form>
+    
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+
+
+    
+</body>
+</html>

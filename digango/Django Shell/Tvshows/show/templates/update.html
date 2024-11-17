@@ -27,7 +27,15 @@
 
     <input type="submit" value="update"><br>
     </form>
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items %}
+            <li><strong>{{ field }}:</strong> {{ error }}</li>
+         {% endfor %}
+    </ul>
+    {% endif %}
     <a href="/shows">Go to Show</a>
+
 
     
     
